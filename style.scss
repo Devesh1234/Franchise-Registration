@@ -128,6 +128,7 @@ $dark-blue-color: #397383;
   letter-spacing: 0.05rem !important;
   word-spacing: 0px !important;
   line-height: 1.75rem !important;
+  word-break: break-word;
 }
 .sub_heading {
   font-size: 1.75rem !important;
@@ -136,22 +137,15 @@ $dark-blue-color: #397383;
   letter-spacing: 0.02rem;
 }
 
-
 // ------Media Query for Common classes
 
-@media only screen and (max-width:767px) {
-  .dark_theme_header{
-    h1
-    {
+@media only screen and (max-width: 767px) {
+  .dark_theme_header {
+    h1 {
       font-size: 40px;
     }
   }
 }
-
-
-
-
-
 
 // common classes end
 
@@ -281,24 +275,12 @@ $dark-blue-color: #397383;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  // position: absolute;
-  // width: 100%;
-  // top: 0%;
-  // left: 0%;
-  // height: 100%;
   z-index: 3;
-  // position: fixed;
   background-color: $purple-bg-color;
-  // opacity: 0.4;
   overflow-y: hidden;
   img {
-    // width: 65px;
-    // height: 65px;
-    // position: absolute;
-    // inset: 50%;
     max-width: 65px;
     height: auto;
-
     animation: loader_animate 3s infinite ease-in;
   }
 }
@@ -478,7 +460,7 @@ $dark-blue-color: #397383;
   font-family: "Nunito", sans-serif;
   display: flex;
   flex-direction: column;
-  gap: 8em;
+  gap: 4em;
   position: relative;
 
   .main {
@@ -747,6 +729,10 @@ $dark-blue-color: #397383;
           transition: all 0.8s ease;
           background-position: 0px;
           background-size: 200px;
+          img{
+            width: 100%;
+            height: 100%;
+          }
         }
 
         h2 {
@@ -960,6 +946,10 @@ $dark-blue-color: #397383;
     .items {
       display: flex;
       gap: 2em;
+      a:hover
+      {
+        color: $orange-color  !important;
+      }
     }
   }
   img {
@@ -1105,7 +1095,7 @@ $dark-blue-color: #397383;
     padding: 3em 2em;
     .app_desc {
       width: 100%;
-      h1{
+      h1 {
         font-size: 50px;
       }
       p {

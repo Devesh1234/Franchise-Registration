@@ -121,6 +121,7 @@ body {
   letter-spacing: 0.05rem !important;
   word-spacing: 0px !important;
   line-height: 1.75rem !important;
+  word-break: break-word;
 }
 
 .sub_heading {
@@ -429,7 +430,7 @@ body {
   font-family: "Nunito", sans-serif;
   display: flex;
   flex-direction: column;
-  gap: 8em;
+  gap: 4em;
   position: relative;
 }
 .mission_vision_values .main {
@@ -666,6 +667,10 @@ body {
   background-position: 0px;
   background-size: 200px;
 }
+.about_us .container .container_cards ._card .icon img {
+  width: 100%;
+  height: 100%;
+}
 .about_us .container .container_cards ._card h2 {
   width: 100%;
   margin: 0;
@@ -863,6 +868,9 @@ body {
 .footer .footer-items .items {
   display: flex;
   gap: 2em;
+}
+.footer .footer-items .items a:hover {
+  color: #eaa84f !important;
 }
 .footer img {
   width: 75px;
