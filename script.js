@@ -82,6 +82,8 @@ var starting = document.querySelector(".starting h1");
 starting.innerHTML = starting.innerText
   .split("")
   .map((char) => {
+    if(char=='!')
+    return "<span>!<br></span>";
     return "<span>" + char + "</span>";
   })
   .join("");
