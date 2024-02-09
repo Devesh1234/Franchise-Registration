@@ -939,7 +939,7 @@ body {
   }
   .mission_vision_values {
     padding: 4em 2em;
-    gap: 5em;
+    gap: 0em;
   }
   .mission_vision_values .main {
     flex-direction: column;
