@@ -162,7 +162,7 @@ body {
   align-items: center;
 }
 .intro .main div h1 {
-  font-size: 80px;
+  font-size: 60px;
   color: white;
   font-family: "Poppins", sans-serif;
   letter-spacing: 2px;
@@ -351,8 +351,8 @@ body {
   position: relative;
 }
 .starting img {
-  width: 600px;
-  height: 600px;
+  width: 400px;
+  height: 400px;
 }
 .starting .leaf_shape_1 {
   left: 10px;
@@ -380,7 +380,7 @@ body {
 }
 .connectivity .model {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .connectivity .model :nth-child(1) {
@@ -464,8 +464,8 @@ body {
   color: #bc1256;
 }
 .mission_vision_values .main img {
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
 }
 .mission_vision_values .our_mission .mission_img {
   animation: mission_animate infinite 3s ease-in;
@@ -635,9 +635,9 @@ body {
 }
 .about_us .container .container_cards ._card {
   width: 100%;
-  max-width: 300px;
+  max-width: 250px;
   min-width: 200px;
-  height: 300px;
+  height: 250px;
   background-color: #f5fefd !important;
   margin: 10px;
   border-radius: 15px;
@@ -654,8 +654,8 @@ body {
 .about_us .container .container_cards ._card .icon {
   margin: 0 auto;
   width: 100%;
-  height: 80px;
-  max-width: 80px;
+  height: 60px;
+  max-width: 60px;
   padding: 1em;
   background: linear-gradient(90deg, #bc1256 0%, #bc1256 40%, rgb(0, 0, 0) 60%);
   border-radius: 100%;
@@ -675,7 +675,7 @@ body {
   width: 100%;
   margin: 0;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 20px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 4px;
@@ -685,19 +685,18 @@ body {
 .about_us .container .container_cards ._card h1 {
   width: 80%;
   margin: 0 auto;
-  font-size: 13px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 10px;
   font-weight: bold;
   letter-spacing: 2px;
   opacity: 0;
   max-height: 0;
   transition: all 0.3s ease;
-  font-size: 40px;
+  font-size: 32px;
   color: #bc1256;
 }
 .about_us .container .container_cards ._card:hover {
-  height: 320px;
+  height: 270px;
 }
 .about_us .container .container_cards ._card:hover h1 {
   transition: all 0.3s ease;
@@ -873,8 +872,8 @@ body {
   color: #eaa84f !important;
 }
 .footer img {
-  width: 75px;
-  height: 75px;
+  width: 65px;
+  height: 65px;
 }
 .footer a {
   margin-bottom: 20px;
@@ -889,7 +888,7 @@ body {
     padding: 5em 2em;
   }
   .intro .main div h1 {
-    font-size: 60px;
+    font-size: 48px;
   }
   .intro .main div button:hover {
     background-color: transparent;
@@ -973,7 +972,7 @@ body {
     flex-direction: column;
   }
   .about_us .container .container_cards ._card {
-    height: 320px;
+    height: 270px;
   }
   .about_us .container .container_cards ._card h1 {
     opacity: 1;
@@ -1021,4 +1020,95 @@ body {
     flex-direction: column;
     gap: 5px;
   }
+  .bottom_sheet.show-modal .bottom_container {
+    background-color: green;
+    height: 30vh !important;
+  }
+  .bottom_sheet.show-modal .bottom_container .bottom_main .option img {
+    width: 45px !important;
+    height: 45px !important;
+  }
+}
+.bottom_sheet.show-modal {
+  transition: all 0.2s ease-in-out;
+  background-color: #cbcbcb;
+  display: block;
+  position: fixed;
+  bottom: 0;
+  z-index: 1111;
+  height: 100vh;
+  width: 100%;
+}
+.bottom_sheet.show-modal .backdrop {
+  height: 60vh;
+}
+.bottom_sheet.show-modal .bottom_container {
+  position: absolute;
+  height: 40vh;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  padding: 15px 20px;
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.bottom_sheet.show-modal .bottom_container .close_sheet {
+  align-self: flex-end !important;
+}
+.bottom_sheet.show-modal .bottom_container .close_sheet h1 {
+  font-size: 48px;
+  line-height: 30px;
+}
+.bottom_sheet.show-modal .bottom_container .bottom_main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+.bottom_sheet.show-modal .bottom_container .bottom_main .option {
+  border-radius: 7px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.bottom_sheet.show-modal .bottom_container .bottom_main .option.selected {
+  opacity: 1;
+}
+.bottom_sheet.show-modal .bottom_container .bottom_main .option img {
+  width: 40px;
+  height: 40px;
+  border: solid 1px black;
+  width: 75px !important;
+  height: 75px !important;
+  padding: 10px;
+  border-radius: 6px;
+}
+.bottom_sheet.show-modal .bottom_container .bottom_main .option h2 {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 5px;
+}
+.bottom_sheet.show-modal .bottom_container .proceed_btn {
+  opacity: 0.3;
+  width: 100%;
+  pointer-events: none;
+  background-color: #bc1256;
+  color: white;
+  padding: 0.5rem 3rem;
+  font-size: 1.5rem;
+  border-radius: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-family: "Kanit", sans-serif;
+}
+.bottom_sheet.show-modal .bottom_container .proceed_btn.active {
+  opacity: 1;
+  pointer-events: auto;
 }/*# sourceMappingURL=style.css.map */

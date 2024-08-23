@@ -11,8 +11,8 @@
 
 
 
-console.log('Width------',screen.width)
-console.log('Height------',screen.height)
+console.log('Width------', screen.width)
+console.log('Height------', screen.height)
 
 // js script for preloader
 
@@ -67,8 +67,8 @@ var moving_animation = anime({
   targets: ".intro h1 span",
   opacity: [0, 1],
   easing: "easeInOutQuad",
-  duration:2000,
-  delay: (el, i) => 90 * (i+1),
+  duration: 2000,
+  delay: (el, i) => 90 * (i + 1),
   autoplay: true,
 });
 
@@ -82,8 +82,8 @@ var starting = document.querySelector(".starting h1");
 starting.innerHTML = starting.innerText
   .split("")
   .map((char) => {
-    if(char=='!')
-    return "<span>!<br></span>";
+    if (char == '!')
+      return "<span>!<br></span>";
     return "<span>" + char + "</span>";
   })
   .join("");
@@ -154,6 +154,138 @@ window.onscroll = function () {
 
   // console.log('galleryHeader', galleryHeader)
 };
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  fetchWebsiteCountData();
+})
+
+
+function fetchWebsiteCountData() {
+  // Define the API URL
+  const countUrl = 'http://62.72.30.98:8000/api/update-visit-count/';
+  const countUrl2 = 'http://62.72.30.98:8000/api/get-counts/';
+
+  const users_count = document.getElementById('users_count');
+  const vendors_count = document.getElementById('vendors_count');
+  const visits_count = document.getElementById('visits_count');
+
+
+  if (checkUserVisit() == false) {
+
+
+    fetch(countUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
+  }
+
+
+  // Make a GET request
+
+
+
+  fetch(countUrl2)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      users_count.innerHTML = data.user_count;
+      vendors_count.innerHTML = data.vendor_count;
+      visits_count.innerHTML = data.visit_count;
+
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+
+
+
+
+
+
+
+}
+
+
+
+function checkUserVisit() {
+
+  if (localStorage.getItem('user_exist')) {
+    return true;
+  } else {
+    localStorage.setItem('user_exist', 'true');
+    return false;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+$('#register').click(() => {
+  console.log('devesh');
+  $('.bottom_sheet').addClass('show-modal');
+})
+
+$('.close_sheet ,  .backdrop').click(() => {
+  $('.bottom_sheet').removeClass('show-modal');
+})
+
+
+
+$('.user_option').click(() => {
+  $('.user_option').addClass('selected')
+  $('.vendor_option').removeClass('selected')
+  checkForProceedActive();
+})
+
+$('.vendor_option').click(() => {
+  $('.vendor_option').addClass('selected')
+  $('.user_option').removeClass('selected')
+  checkForProceedActive();
+
+})
+
+
+function checkForProceedActive() {
+  if ($('.user_option').hasClass('selected') || $('.vendor_option').hasClass('selected')) {
+    $('.proceed_btn').addClass('active');
+  }
+  else {
+    $('.proceed_btn').removeClass('active');
+  }
+
+}
+
+
+$('.proceed_btn').click(() => {
+  if ($('.user_option').hasClass('selected')) {
+    console.log('Proceed to User');
+  }
+  if ($('.vendor_option').hasClass('selected')) {
+    console.log('Proceed to Vendor');
+  }
+
+})
 
 
 
