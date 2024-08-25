@@ -50,7 +50,7 @@ body {
   text-align: center;
 }
 .dark_theme_header h1 {
-  font-size: 46px;
+  font-size: 38px;
   font-weight: 500;
   color: white;
   z-index: 3;
@@ -62,12 +62,12 @@ body {
 }
 .dark_theme_header img {
   width: 300px;
-  height: 20px;
+  height: 16px;
   margin-bottom: 1em;
   z-index: 3;
 }
 .dark_theme_header h2 {
-  font-size: 1.5rem !important;
+  font-size: 1.2rem !important;
   font-family: "Raleway", sans-serif !important;
   font-weight: 500 !important;
   text-transform: capitalize;
@@ -133,7 +133,7 @@ body {
 
 @media only screen and (max-width: 767px) {
   .dark_theme_header h1 {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 .intro {
@@ -347,12 +347,12 @@ body {
 
 .starting {
   background-color: rgb(30, 9, 48) !important;
-  padding: 1em 0em 8em 0em;
+  padding: 1em 3em 4em 3em;
   position: relative;
 }
 .starting img {
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
 }
 .starting .leaf_shape_1 {
   left: 10px;
@@ -380,7 +380,7 @@ body {
 }
 .connectivity .model {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 .connectivity .model :nth-child(1) {
@@ -410,7 +410,7 @@ body {
 }
 .connectivity .model-label h1 {
   color: white;
-  font-size: 42px;
+  font-size: 38px;
   font-weight: 500;
 }
 .connectivity .model-label h1 span {
@@ -889,6 +889,7 @@ body {
   }
   .intro .main div h1 {
     font-size: 48px;
+    line-height: 60px;
   }
   .intro .main div button:hover {
     background-color: transparent;
@@ -911,8 +912,8 @@ body {
   }
   .starting div img {
     margin-top: 0px !important;
-    height: 350px;
-    width: 350px;
+    height: 300px;
+    width: 300px;
   }
   .why_company {
     padding: 5em 2em;
@@ -972,7 +973,8 @@ body {
     flex-direction: column;
   }
   .about_us .container .container_cards ._card {
-    height: 270px;
+    height: 260px;
+    max-width: 300px;
   }
   .about_us .container .container_cards ._card h1 {
     opacity: 1;
@@ -1029,9 +1031,13 @@ body {
     height: 45px !important;
   }
 }
+.bottom_sheet {
+  display: none;
+}
+
 .bottom_sheet.show-modal {
   transition: all 0.2s ease-in-out;
-  background-color: #cbcbcb;
+  background-color: rgba(203, 203, 203, 0.5);
   display: block;
   position: fixed;
   bottom: 0;
